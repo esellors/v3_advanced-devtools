@@ -11,12 +11,12 @@ class CharsDisplay extends Component {
     }
 
     getChars = () => {
-            axios
-                .get('/api/chars')
-                .then(res => {
-                    this.props.setBbChars(res.data)
-                })
-                .catch(err => console.log(err));
+        axios
+            .get('/api/chars')
+            .then(res => {
+                this.props.setBbChars(res.data)
+            })
+            .catch(err => console.log(err));
     }
 
     addFav = charObj => {

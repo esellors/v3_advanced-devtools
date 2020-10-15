@@ -7,7 +7,7 @@ class FavCharsDisplay extends Component {
     componentDidMount() {
         this.getFavs();
     }
-    
+
     getFavs = () => {
         axios
             .get('/api/favs')
@@ -20,7 +20,7 @@ class FavCharsDisplay extends Component {
     clearFavs = () => {
         axios
             .delete('/api/favs')
-            .then(() => 
+            .then(() =>
                 this.props.setFavChars([])
             )
             .catch(err => console.log(err))
@@ -42,9 +42,9 @@ class FavCharsDisplay extends Component {
 
         return (
             <section >
-                { 
-                    favChars.length > 0 
-                        ? <button onClick={this.clearFavs}>Clear</button> 
+                {
+                    favChars.length > 0
+                        ? <button onClick={this.clearFavs}>Clear</button>
                         : null
                 }
                 <div className='bb-chars'>

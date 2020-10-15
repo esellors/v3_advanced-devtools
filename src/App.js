@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps.favChars.length !== this.props.favChars.length) {
+    if (prevProps.favChars.length !== this.props.favChars.length) {
       this.setState({ showMessage: true })
 
       setTimeout(() => {
@@ -28,8 +28,8 @@ class App extends Component {
   }
 
   render() {
-    let viewComponent; 
-    switch(this.state.view) {
+    let viewComponent;
+    switch (this.state.view) {
       case 'characters':
         viewComponent = <CharsDisplay />
         break;
@@ -42,13 +42,13 @@ class App extends Component {
 
     return (
       <main className="App">
-        { this.state.showMessage ? <p className='message'>Favorites Updated!</p> : null }
+        { this.state.showMessage ? <p className='message'>Favorites Updated!</p> : null}
         <h1>Breaking Bad Characters</h1>
         <ul className='nav-links'>
           <li onClick={() => this.pageView('characters')}>Characters</li>
           <li onClick={() => this.pageView('favorites')}>My Favs</li>
         </ul>
-        { viewComponent }
+        { viewComponent}
       </main>
     );
   }

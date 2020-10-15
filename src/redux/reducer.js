@@ -23,7 +23,7 @@ export function setFavChars(arr) {
 export default function reducer(state = initialState, action) {
     const { type, payload } = action;
 
-    switch(type) {
+    switch (type) {
         case SET_BBCHARS:
             return {
                 ...state,
